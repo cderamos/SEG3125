@@ -18,20 +18,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/welcomeString"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="50dp"
             android:textAlignment="center"
             android:textSize="50sp" />
 
         <Button
             android:id="@+id/buttonGeography"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_marginBottom="20dp"
+            android:text="@string/course1"
+            android:layout_gravity="center" />
 
         <Button
             android:id="@+id/buttonClassics"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/course2"
             android:layout_gravity="center" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

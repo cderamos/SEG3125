@@ -1,4 +1,15 @@
 <resources>
-    <string name="app_name">PracticeApp</string>
+    <string name="app_name"> Test Practice App</string>
+    <string name="home"> HOME </string>
     <string name="action_settings">Settings</string>
+    <string name="welcomeString"> Welcome to the Test Practice App! </string>
+    <string name="course1"> Geography </string>
+    <string name="course2"> WHMIS </string>
+    <string name="examHist"> See Exam History </string>
+    <string name="examHistDisc"> Want to check your past results? </string>
+    <string name="availCourses"> Courses Available </string>
+    <string name="settings"> SETTINGS </string>
+    <string name="minPassingGrade"> Minimum Passing Grade:</string>
+    <string name="numQuestions"> Number of Questions:</string>
+    <string name="applySet"> Apply</string>
 </resources>

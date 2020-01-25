@@ -27,7 +27,7 @@
                 android:layout_marginRight="20dp"
                 android:text="@string/home"
                 android:textAlignment="center" />
-        </androidx.appcompat.widget.Toolbar>
+        </androidx.appcompat.widget.Toolbar>>
 
         <ImageView
             android:id="@+id/imageView"

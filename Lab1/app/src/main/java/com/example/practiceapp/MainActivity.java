@@ -43,6 +43,16 @@ public class MainActivity extends AppCompatActivity {
         }*/
     }
 
+    public void loadGeography(View v) {
+        Intent intent = new Intent(this, QuestionsActivity.class);
+        startActivity(intent);
+    }
+
+    public void loadClassics(View v) {
+        Intent intent = new Intent(this, QuestionsActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -56,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        Log.d("okk", "ok: " + id);
+
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Intent intent = new Intent(this, SettingsActivity.class);

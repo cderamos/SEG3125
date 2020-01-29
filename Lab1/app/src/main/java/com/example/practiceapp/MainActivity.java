@@ -45,11 +45,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadGeography(View v) {
         Intent intent = new Intent(this, QuestionsActivity.class);
+        intent.putExtra("quiz", 0);
         startActivity(intent);
     }
 
     public void loadClassics(View v) {
         Intent intent = new Intent(this, QuestionsActivity.class);
+        intent.putExtra("quiz", 1);
         startActivity(intent);
     }
 

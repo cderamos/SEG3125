@@ -13,6 +13,8 @@
     <string name="numQuestions"> Number of Questions:</string>
     <string name="applySet"> Apply</string>
     <string name="title_activity_settings2">Settings</string>
+    <string name="resultsHeader">Your Result:</string>
+    <string name="retakeExam">Retake Exam</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>

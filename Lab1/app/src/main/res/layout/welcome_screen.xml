@@ -11,12 +11,12 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar5"
+            android:id="@+id/toolbarWelcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
-            app:navigationIcon="@drawable/settings_navicon"
+            app:navigationIcon="@drawable/house_navicon"
             android:theme="?attr/actionBarTheme">
 
             <TextView
@@ -27,7 +27,7 @@
                 android:layout_marginRight="20dp"
                 android:text="@string/home"
                 android:textAlignment="center" />
-        </androidx.appcompat.widget.Toolbar>>
+        </androidx.appcompat.widget.Toolbar>
 
         <ImageView
             android:id="@+id/imageView"
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="50dp"
-                android:text="@string/course2"
+                android:text="Classics"
                 android:onClick="loadClassics"/>
 
             <TextView

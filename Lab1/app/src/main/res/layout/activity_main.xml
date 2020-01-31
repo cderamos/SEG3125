@@ -16,12 +16,12 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            android:baselineAligned="false"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/welcome_screen" />
+    <include layout="@layout/settings_screen" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

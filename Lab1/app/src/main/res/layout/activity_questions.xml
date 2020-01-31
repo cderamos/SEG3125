@@ -1,33 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuestionsActivity">
+    android:visibility="visible">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-146dp">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbarWelcome"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:minHeight="?attr/actionBarSize"
+            android:onClick="loadSettings"
+            android:navigationIcon="@drawable/house_navicon"
+            android:theme="?attr/actionBarTheme">
 
-    </com.google.android.material.appbar.AppBarLayout>
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:text="@string/home"
+                android:textAlignment="center" />
+        </androidx.appcompat.widget.Toolbar>
 
-    <include layout="@layout/content_questions" />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="25dp"
+            android:text="UwU"
+            android:textAlignment="center"
+            android:textSize="35sp" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="112dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="262dp"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="221dp">
+
+                <RadioButton
+                    android:id="@+id/a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A" />
+
+                <RadioButton
+                    android:id="@+id/b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B" />
+
+                <RadioButton
+                    android:id="@+id/c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C" />
+
+                <RadioButton
+                    android:id="@+id/d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="200dp"
+            android:layout_height="68dp"
+            android:layout_gravity="center"
+            android:text="Next"
+            android:onClick="onNextButtonClick"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

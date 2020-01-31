@@ -16,18 +16,24 @@ import android.util.Log;
 import android.view.View;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 public class QuestionsActivity extends AppCompatActivity {
     private static final String[] COURSE = {"Geography", "Classics"};
 
     private int courseCode = 0;
-    private int numQuestions;
+    private int numQuestions = 20;
+    private int currentQuestion = 0;
     private float score;
     private float passingGrade;
+    private String[] questions = {"What?", "When?", "sjiqwji"};
+    private String[][] answers = {{"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}};
     private DbHelper dbHelper = new DbHelper(this);
-    private SQLiteDatabase db = dbHelper.getWritableDatabase();
+    private SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,13 +56,30 @@ public class QuestionsActivity extends AppCompatActivity {
             }
         });
 
-
-
-        SQLiteDatabase dbRead = dbHelper.getReadableDatabase();
+        db = dbHelper.getWritableDatabase();
+        loadNextQuestion();
+        //SQLiteDatabase dbRead = dbHelper.getReadableDatabase();
 
     }
 
-    private void SaveScore () {
+    private void loadNextQuestion() {
+        // Set text question
+        // questions[currentQuestion];
+
+        // Set text answers
+        List<String> answerList = new ArrayList<>();
+        answerList.add(answers[currentQuestion][0]);
+        answerList.add(answers[currentQuestion][1]);
+        answerList.add(answers[currentQuestion][2]);
+        answerList.add(answers[currentQuestion][3]);
+
+        // Shuffle!
+        Collections.shuffle(answerList);
+        Log.d("List", answerList.toString());
+        currentQuestion++;
+    }
+
+    private void SaveScore() {
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
         values.put("CID", courseCode);

@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome_screen);
-        Toolbar toolbar = findViewById(R.id.toolbar5);
-        setSupportActionBar(toolbar);
 
         /*@Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
     public void loadClassics(View v) {
         Intent intent = new Intent(this, QuestionsActivity.class);
         intent.putExtra("quiz", 1);
+        startActivity(intent);
+    }
+
+    public void loadSettings(View v) {
+        Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
 

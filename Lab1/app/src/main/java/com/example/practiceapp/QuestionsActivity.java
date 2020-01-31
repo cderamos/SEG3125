@@ -59,10 +59,11 @@ public class QuestionsActivity extends AppCompatActivity {
     private void SaveScore () {
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
+        values.put("CID", courseCode);
         values.put("Score", score);
         values.put("Date", new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()));
 
         // Insert the new row, returning the primary key value of the new row
-        long newRowId = db.insert(COURSE[courseCode], null, values);
+        long newRowId = db.insert("Quizzes", null, values);
     }
 }

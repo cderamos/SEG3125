@@ -5,11 +5,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 class DbHelper extends SQLiteOpenHelper {
-    private static final String SQL_CREATE_ENTRIES =
-            "CREATE TABLE Geography (QID INTEGER PRIMARY KEY, score FLOAT, date DATE)";
+    private static final String CREATE_QUIZZES =
+            "CREATE TABLE Quizzes (QID INTEGER PRIMARY KEY, CID INTEGER, score FLOAT, date DATE)";
 
-    private static final String CREATE_GEO =
-            "CREATE TABLE Settings (MinGrade FLOAT, NumQuestions)";
+    private static final String CREATE_SETTINGS =
+            "CREATE TABLE Settings (MinGrade FLOAT, NumQuestions INTEGER)";
 
     private static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS Geography";
@@ -23,7 +23,8 @@ class DbHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(SQL_CREATE_ENTRIES);
+        db.execSQL(CREATE_QUIZZES);
+        db.execSQL(CREATE_SETTINGS);
     }
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // This database is only a cache for online data, so its upgrade policy is

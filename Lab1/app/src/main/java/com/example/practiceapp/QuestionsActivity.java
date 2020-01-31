@@ -15,6 +15,10 @@ import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class QuestionsActivity extends AppCompatActivity {
     private static final String[] COURSE = {"Geography", "Classics"};
 
@@ -56,8 +60,9 @@ public class QuestionsActivity extends AppCompatActivity {
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
         values.put("Score", score);
+        values.put("Date", new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()));
 
         // Insert the new row, returning the primary key value of the new row
-        long newRowId = db.insert("Geography", null, values);
+        long newRowId = db.insert(COURSE[courseCode], null, values);
     }
 }

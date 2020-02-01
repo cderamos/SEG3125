@@ -1,0 +1,487 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "title": "What does the term 'Laconizer' mean?"
+    },
+    {
+      "id": 2,
+      "title": "What is the Greek term for 'Political Equality'?"
+    },
+    {
+      "id": 3,
+      "title": "'Historiai' was written by which author?'"
+    },
+    {
+      "id": 4,
+      "title": "Why was Thucydides exiled from Athens in 424?"
+    },
+    {
+      "id": 5,
+      "title": "The Battle of Plataea took place in what year?"
+    },
+    {
+      "id": 6,
+      "title": "In Sparta, the Gerousia consists of ______"
+    },
+    {
+      "id": 7,
+      "title": "King Cleomenes was king of which Greek city-state?"
+    },
+    {
+      "id": 8,
+      "title": "The aristocratic families of Athens were given what name?"
+    },
+    {
+      "id": 9,
+      "title": "The Delian League was formed in what year?"
+    },
+    {
+      "id": 10,
+      "title": "How many attempts did it take Peisistratus to seize power?"
+    },
+    {
+      "id": 11,
+      "title": "During the Peloponnesian War, which Greek city stayed neutral?"
+    },
+    {
+      "id": 12,
+      "title": "When someone was ostracized, how long was their exile from Athens?"
+    },
+    {
+      "id": 13,
+      "title": "What is the symbol(s) of political and military submission to Persia?"
+    },
+    {
+      "id": 14,
+      "title": "The name of the Athenian tyrant who fled to Persia is ____"
+    },
+    {
+      "id": 15,
+      "title": "Alexander of Macedon told the Greeks to abandon (the) _____ during the Greco-Persian wars?"
+    },
+    {
+      "id": 16,
+      "title": "The Spartans sent out the Partheniai to colonize _____ in southern Italy"
+    },
+    {
+      "id": 17,
+      "title": "The political reforms of Lycurgus is known as an archaic document called ______"
+    },
+    {
+      "id": 18,
+      "title": "Who wrote the 'Athenian Politeia'?"
+    },
+    {
+      "id": 19,
+      "title": "Which writer promoted  the partnership of Greek cities and Rome?"
+    },
+    {
+      "id": 20,
+      "title": "The most well known DORIAN city was called ______"
+    }
+
+  ],
+  "choices": [
+    {
+      "id": 1,
+      "body": "Pro-Sparta ",
+      "questionId": 1
+    },
+    {
+      "id": 2,
+      "body": "Someone from the region of Laconia ",
+      "questionId": 1
+    },
+    {
+      "id": 3,
+      "body": "Pro-Persian ",
+      "questionId": 1
+    },
+    {
+      "id": 4,
+      "body": "None of the above ",
+      "questionId": 1
+    },
+    {
+      "id": 1,
+      "body": "Isonomia ",
+      "questionId": 2
+    },
+    {
+      "id": 2,
+      "body": "Gerousia ",
+      "questionId": 2
+    },
+    {
+      "id": 3,
+      "body": "Ekklesia",
+      "questionId": 2
+    },
+    {
+      "id": 4,
+      "body": "Politeia ",
+      "questionId": 2
+    },
+    {
+      "id": 1,
+      "body": "Herodotus",
+      "questionId": 3
+    },
+    {
+      "id": 2,
+      "body": "Plutarch",
+      "questionId": 3
+    },
+    {
+      "id": 3,
+      "body": "Xenophon",
+      "questionId": 3
+    },
+    {
+      "id": 4,
+      "body": "Cimon",
+      "questionId": 3
+    },
+    {
+      "id": 1,
+      "body": "Lost Amphipolis ",
+      "questionId": 4
+    },
+    {
+      "id": 2,
+      "body": "For being a Medizer",
+      "questionId": 4
+    },
+    {
+      "id": 3,
+      "body": "Abused his power",
+      "questionId": 4
+    },
+    {
+      "id": 4,
+      "body": "None of the Above",
+      "questionId": 4
+    },
+    {
+      "id": 1,
+      "body": "479 B.C",
+      "questionId": 5
+    },
+    {
+      "id": 2,
+      "body": "500 B.C",
+      "questionId": 5
+    },
+    {
+      "id": 3,
+      "body": "434 B.C",
+      "questionId": 5
+    },
+    {
+      "id": 4,
+      "body": "480 B.C",
+      "questionId": 5
+    },
+    {
+      "id": 1,
+      "body": "2 kings and 28 councillors ",
+      "questionId": 6
+    },
+    {
+      "id": 2,
+      "body": "2 kings and 30 councillors",
+      "questionId": 6
+    },
+    {
+      "id": 3,
+      "body": "2 kings and 5 ephors",
+      "questionId": 6
+    },
+    {
+      "id": 4,
+      "body": "None of the Above",
+      "questionId": 6
+    },
+    {
+      "id": 1,
+      "body": "Sparta",
+      "questionId": 7
+    },
+    {
+      "id": 2,
+      "body": "Argos",
+      "questionId": 7
+    },
+    {
+      "id": 3,
+      "body": "Elis",
+      "questionId": 7
+    },
+    {
+      "id": 4,
+      "body": "Thebes",
+      "questionId": 7
+    },
+    {
+      "id": 1,
+      "body": "Eupatridae",
+      "questionId": 8
+    },
+    {
+      "id": 2,
+      "body": "Kleisthenes",
+      "questionId": 8
+    },
+    {
+      "id": 3,
+      "body": "Perioikoi",
+      "questionId": 8
+    },
+    {
+      "id": 4,
+      "body": "Hegemon",
+      "questionId": 8
+    },
+    {
+      "id": 1,
+      "body": "478/9 B.C",
+      "questionId": 9
+    },
+    {
+      "id": 2,
+      "body": "458/9 B.C",
+      "questionId": 9
+    },
+    {
+      "id": 3,
+      "body": "460 B.C",
+      "questionId": 9
+    },
+    {
+      "id": 4,
+      "body": "498 B.C",
+      "questionId": 9
+    },
+    {
+      "id": 1,
+      "body": "3",
+      "questionId": 10
+    },
+    {
+      "id": 2,
+      "body": "5",
+      "questionId": 10
+    },
+    {
+      "id": 3,
+      "body": "1",
+      "questionId": 10
+    },
+    {
+      "id": 4,
+      "body": "2",
+      "questionId": 10
+    },
+    {
+      "id": 1,
+      "body": "Melos",
+      "questionId": 11
+    },
+    {
+      "id": 2,
+      "body": "Thebes",
+      "questionId": 11
+    },
+    {
+      "id": 3,
+      "body": "Trozen",
+      "questionId": 11
+    },
+    {
+      "id": 4,
+      "body": "Samos",
+      "questionId": 11
+    },
+    {
+      "id": 1,
+      "body": "10 years",
+      "questionId": 12
+    },
+    {
+      "id": 2,
+      "body": "3 years",
+      "questionId": 12
+    },
+    {
+      "id": 3,
+      "body": "100 years",
+      "questionId": 12
+    },
+    {
+      "id": 4,
+      "body": "1 year",
+      "questionId": 12
+    },
+    {
+      "id": 1,
+      "body": "Water and Earth",
+      "questionId": 13
+    },
+    {
+      "id": 2,
+      "body": "Gold",
+      "questionId": 13
+    },
+    {
+      "id": 3,
+      "body": "Earth",
+      "questionId": 13
+    },
+    {
+      "id": 4,
+      "body": "None of the Above",
+      "questionId": 13
+    },
+    {
+      "id": 1,
+      "body": "Hippias",
+      "questionId": 14
+    },
+    {
+      "id": 2,
+      "body": "Cleomenes",
+      "questionId": 14
+    },
+    {
+      "id": 3,
+      "body": "Peisistratus",
+      "questionId": 14
+    },
+    {
+      "id": 4,
+      "body": "Hipparchus",
+      "questionId": 14
+    },
+    {
+      "id": 1,
+      "body": "Vale of Tempe",
+      "questionId": 15
+    },
+    {
+      "id": 2,
+      "body": "Melos",
+      "questionId": 15
+    },
+    {
+      "id": 3,
+      "body": "Thermopylae",
+      "questionId": 15
+    },
+    {
+      "id": 4,
+      "body": "Isthmus of Corinth",
+      "questionId": 15
+    },
+    {
+      "id": 1,
+      "body": "Taras",
+      "questionId": 16
+    },
+    {
+      "id": 2,
+      "body": "Thessaly",
+      "questionId": 16
+    },
+    {
+      "id": 3,
+      "body": "Syracuse",
+      "questionId": 16
+    },
+    {
+      "id": 4,
+      "body": "Sicily",
+      "questionId": 16
+    },
+    {
+      "id": 1,
+      "body": "The Great Rhetra",
+      "questionId": 17
+    },
+    {
+      "id": 2,
+      "body": "Oedipus Rex",
+      "questionId": 17
+    },
+    {
+      "id": 3,
+      "body": "Bibliotheke",
+      "questionId": 17
+    },
+    {
+      "id": 4,
+      "body": "The Great Politeia",
+      "questionId": 17
+    },
+    {
+      "id": 1,
+      "body": "Aristotle",
+      "questionId": 18
+    },
+    {
+      "id": 2,
+      "body": "Plato",
+      "questionId": 18
+    },
+    {
+      "id": 3,
+      "body": "Pericles",
+      "questionId": 18
+    },
+    {
+      "id": 4,
+      "body": "Mardonius",
+      "questionId": 18
+    },
+    {
+      "id": 1,
+      "body": "Plutarch",
+      "questionId": 19
+    },
+    {
+      "id": 2,
+      "body": "Leonidas",
+      "questionId": 19
+    },
+    {
+      "id": 3,
+      "body": "Thucydides",
+      "questionId": 19
+    },
+    {
+      "id": 4,
+      "body": "Diodorus",
+      "questionId": 19
+    },
+    {
+      "id": 1,
+      "body": "Sparta",
+      "questionId": 20
+    },
+    {
+      "id": 2,
+      "body": "Elis",
+      "questionId": 20
+    },
+    {
+      "id": 3,
+      "body": "Argos",
+      "questionId": 20
+    },
+    {
+      "id": 4,
+      "body": "Chalcis",
+      "questionId": 20
+    }
+  ]
+}

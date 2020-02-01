@@ -18,7 +18,8 @@
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
-            app:navigationIcon="@drawable/house_navicon">
+            app:navigationIcon="@drawable/house_navicon"
+          >
 
             <TextView
                 android:id="@+id/title"

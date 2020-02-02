@@ -30,6 +30,7 @@ import org.json.JSONObject;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -54,6 +55,7 @@ public class QuestionsActivity extends AppCompatActivity {
     private SQLiteDatabase dbWrite;
     private SQLiteDatabase dbRead;
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +71,10 @@ public class QuestionsActivity extends AppCompatActivity {
         dbWrite = dbHelper.getWritableDatabase();
         dbRead = dbHelper.getReadableDatabase();
         loadNextQuestion();
+
+        String json = loadJSONFromAssets();
+        Log.d("onCreate: ", " "+json);
+        parseJSON(json);
         //loadSettings();
     }
 
@@ -133,25 +139,45 @@ public class QuestionsActivity extends AppCompatActivity {
 
     private void updateProgressBar() {
         ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        progressBar.setProgress((int)(currentQuestion/numQuestions));
+        int p = (int)(((currentQuestion-1)*100)/numQuestions);
+        Log.d("updateProgressBar: ", ""+p);
+        progressBar.setProgress(p);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    private void loadQuestions() {
+    private void parseJSON(String json) {
 
-        try (FileReader reader = new FileReader("db.json"))
-        {
+        try {
             //Read JSON file
-            JSONObject jsonObject = new JSONObject(reader.toString());
-
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            JSONObject jsonObject = new JSONObject(json);
+            JSONObject q = jsonObject.getJSONObject("questions");
+            JSONArray questions = jsonObject.getJSONArray(q.toString());
+            Log.d("parseJSON: ", String.valueOf(q));
         } catch (JSONException e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+    }
+
+    public String loadJSONFromAssets() {
+        String json = null;
+        String fn = null;
+        if (courseCode == 0)
+            fn = "Geography.json";
+        else
+            fn = "Classics.json";
+
+        try {
+            InputStream is = QuestionsActivity.this.getAssets().open(fn);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
     }
 
     private void loadSettings() {

@@ -46,7 +46,7 @@ public class QuestionsActivity extends AppCompatActivity {
     private int rightAnswers = 0;
     private int numQuestions = 3;
     private int currentAnswer = 0;
-    private int currentQuestion = 0;
+    private int currentQuestion = -1;
     private float passingGrade;
     private String[] questions = {"What?", "When?", "sjiqwji"};
     private String[][] answers = {{"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}};
@@ -94,20 +94,32 @@ public class QuestionsActivity extends AppCompatActivity {
             // find the radiobutton by returned id
             RadioButton selectedRadioButton = (RadioButton)findViewById(selectedId);
 
+            Log.d("onNextButtonClick: ", currentQuestion + "");
             if (answers[currentQuestion][0] == selectedRadioButton.getText().toString()) {
                 rightAnswers++;
-                Toast.makeText(getApplicationContext(), "Right answer!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Right answer!", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(getApplicationContext(), "Wrong answer!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Wrong answer!", Toast.LENGTH_SHORT).show();
             }
-            loadNextQuestion();
+
+            if (currentQuestion < questions.length-1)
+                loadNextQuestion();
+            else
+                quizComplete();
             updateProgressBar();
         }
     }
 
+    private void quizComplete() {
+        // Display results
+        updateProgressBar(100);
+        Intent intent = new Intent(this, ResultsActivity.class);
+        intent.putExtra("score", (int)(rightAnswers*100)/numQuestions);
+        startActivity(intent);
+    }
+
     private void loadNextQuestion() {
-        // Set text question
-        // questions[currentQuestion];
+        currentQuestion++;
 
         // Set text answers
         List<String> answerList = new ArrayList<>();
@@ -133,15 +145,17 @@ public class QuestionsActivity extends AppCompatActivity {
         ((RadioButton) findViewById(R.id.b)).setText(answerList.get(1));
         ((RadioButton) findViewById(R.id.c)).setText(answerList.get(2));
         ((RadioButton) findViewById(R.id.d)).setText(answerList.get(3));
-
-        currentQuestion++;
     }
 
     private void updateProgressBar() {
         ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        int p = (int)(((currentQuestion-1)*100)/numQuestions);
-        Log.d("updateProgressBar: ", ""+p);
-        progressBar.setProgress(p);
+        progressBar.setProgress((int)(((currentQuestion)*100)/numQuestions));
+    }
+    private void updateProgressBar(int p) {
+        //if (p >= 0 && p <= 100) {
+            ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+            progressBar.setProgress(p);
+      //  }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)

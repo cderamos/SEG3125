@@ -32,6 +32,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -48,10 +49,7 @@ public class QuestionsActivity extends AppCompatActivity {
     private int currentAnswer = 0;
     private int currentQuestion = -1;
     private int minGrade = 50;
-    private DbHelper dbHelper = new DbHelper(this);
-    private SQLiteDatabase dbWrite;
-    private SQLiteDatabase dbRead;
-
+    private ArrayList<Score> history;
 
     public String[][] getJSONAnswers(){
         String[][] answersArray = new String[20][4];
@@ -108,9 +106,7 @@ public class QuestionsActivity extends AppCompatActivity {
         minGrade = intent.getIntExtra("MinGrade", 50);
         numQuestions = intent.getIntExtra("NumQuestions", 20);
 
-        // Load db and UI
-        dbWrite = dbHelper.getWritableDatabase();
-        dbRead = dbHelper.getReadableDatabase();
+        // Load First question
         loadNextQuestion();
 
         String[] array= new String[5];
@@ -163,6 +159,9 @@ public class QuestionsActivity extends AppCompatActivity {
         // Display results
         updateProgressBar(100);
         Intent intent = new Intent(this, ResultsActivity.class);
+        Bundle args = new Bundle();
+        args.putSerializable("ARRAYLIST",(Serializable)history);
+        intent.putExtra("BUNDLE",args);
         intent.putExtra("MinGrade", minGrade);
         intent.putExtra("NumQuestions", numQuestions);
         intent.putExtra("score", (int)(rightAnswers*100)/numQuestions);
@@ -246,16 +245,5 @@ public class QuestionsActivity extends AppCompatActivity {
             return null;
         }
         return json;
-    }
-
-    private void saveScore() {
-        // Create a new map of values, where column names are the keys
-        ContentValues values = new ContentValues();
-        values.put("CID", courseCode);
-        values.put("Score", (rightAnswers/numQuestions));
-        values.put("Date", new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()));
-
-        // Insert the new row, returning the primary key value of the new row
-        long newRowId = dbWrite.insert("Quizzes", null, values);
     }
 }

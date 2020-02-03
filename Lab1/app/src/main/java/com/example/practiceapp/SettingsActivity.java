@@ -22,12 +22,15 @@ import androidx.core.content.ContextCompat;
 
 import org.w3c.dom.Text;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
 public class SettingsActivity extends AppCompatActivity {
+    private ArrayList<Score> history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +86,9 @@ public class SettingsActivity extends AppCompatActivity {
             Log.d("apply: ", minGrade + "  " + numQuestions);
 
             Intent intent = new Intent(this, MainActivity.class);
+            Bundle args = new Bundle();
+            args.putSerializable("ARRAYLIST",(Serializable)history);
+            intent.putExtra("BUNDLE",args);
             intent.putExtra("MinGrade", minGrade);
             intent.putExtra("NumQuestions", numQuestions);
             startActivity(intent);

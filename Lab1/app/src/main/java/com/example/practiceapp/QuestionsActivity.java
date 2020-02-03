@@ -163,7 +163,10 @@ public class QuestionsActivity extends AppCompatActivity {
         // Display results
         updateProgressBar(100);
         Intent intent = new Intent(this, ResultsActivity.class);
+        intent.putExtra("MinGrade", minGrade);
+        intent.putExtra("NumQuestions", numQuestions);
         intent.putExtra("score", (int)(rightAnswers*100)/numQuestions);
+        intent.putExtra("title", COURSE[courseCode]);
         startActivity(intent);
     }
 

@@ -12,9 +12,13 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     int minGrade = 50;
     int numQuestions = 20;
+    private ArrayList<Score> history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +30,18 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         minGrade = intent.getIntExtra("MinGrade", 50);
         numQuestions = intent.getIntExtra("NumQuestions", 20);
+        Bundle args = (Bundle) intent.getBundleExtra("history");
+        if (args != null)
+            history = (ArrayList<Score>) args.getSerializable("ARRAYLIST");
 
         Log.d("main: ", minGrade + "  " + numQuestions);
     }
 
     public void loadGeography(View v) {
         Intent intent = new Intent(this, QuestionsActivity.class);
+        Bundle args = new Bundle();
+        args.putSerializable("ARRAYLIST",(Serializable)history);
+        intent.putExtra("BUNDLE",args);
         intent.putExtra("quiz", 0);
         intent.putExtra("MinGrade", minGrade);
         intent.putExtra("NumQuestions", numQuestions);
@@ -40,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadClassics(View v) {
         Intent intent = new Intent(this, QuestionsActivity.class);
+        Bundle args = new Bundle();
+        args.putSerializable("ARRAYLIST",(Serializable)history);
+        intent.putExtra("BUNDLE",args);
         intent.putExtra("quiz", 1);
         intent.putExtra("MinGrade", minGrade);
         intent.putExtra("NumQuestions", numQuestions);
@@ -48,12 +61,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadSettings(View v) {
         Intent intent = new Intent(this, SettingsActivity.class);
+        Bundle args = new Bundle();
+        args.putSerializable("ARRAYLIST",(Serializable)history);
+        intent.putExtra("BUNDLE",args);
+        intent.putExtra("quiz", 1);
+        intent.putExtra("MinGrade", minGrade);
+        intent.putExtra("NumQuestions", numQuestions);
         startActivity(intent);
     }
 
     public void loadExamHistory(View v) {
         Intent intent = new Intent(this,ExamResultsActivity.class);
-        intent.putExtra("results", 2);
+        Bundle args = new Bundle();
+        args.putSerializable("ARRAYLIST",(Serializable)history);
+        intent.putExtra("BUNDLE",args);
+        intent.putExtra("quiz", 1);
+        intent.putExtra("MinGrade", minGrade);
+        intent.putExtra("NumQuestions", numQuestions);
         startActivity(intent);
     }
 

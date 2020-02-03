@@ -15,13 +15,19 @@ import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
 public class ResultsActivity extends AppCompatActivity {
+    private int minGrade = 0;
+    private int numQuestions = 20;
     private int score = 0;
+    private String title = null;
+    private ArrayList<Score> history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +37,14 @@ public class ResultsActivity extends AppCompatActivity {
         TextView resultText = (TextView) findViewById((R.id.testResultText));
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
+        minGrade = intent.getIntExtra("MinGrade", 50);
+        numQuestions = intent.getIntExtra("NumQuestions", 20);
         score = (int) intent.getIntExtra("score", 0);
+        title =  intent.getStringExtra("title");
+        Bundle args = (Bundle) intent.getBundleExtra("history");
+        history = (ArrayList<Score>) args.getSerializable("ARRAYLIST");
+        history.add(new Score(score, title, new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date())));
+
         ((TextView) findViewById(R.id.score)).setText(score+"%");
         if (score >=0 && score < 50){
             rBar.setRating((0));
@@ -73,6 +86,11 @@ public class ResultsActivity extends AppCompatActivity {
 
     public void home(View view) {
         Intent intent = new Intent(this, MainActivity.class);
+        Bundle args = new Bundle();
+        args.putSerializable("ARRAYLIST",(Serializable)history);
+        intent.putExtra("BUNDLE",args);
+        intent.putExtra("MinGrade", minGrade);
+        intent.putExtra("NumQuestions", numQuestions);
         startActivity(intent);
     }
 }

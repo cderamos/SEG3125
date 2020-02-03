@@ -16,16 +16,13 @@
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            android:navigationIcon="@drawable/house_navicon"
-            android:onClick="loadSettings" >
+            android:theme="?attr/actionBarTheme">
 
             <TextView
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="40dp"
                 android:text="@string/home"
                 android:textAlignment="center" />
         </androidx.appcompat.widget.Toolbar>
@@ -33,9 +30,11 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="125dp"
             android:layout_marginTop="50dp"
-            app:srcCompat="@mipmap/ic_launcher" />
+            android:layout_gravity="center"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
 
         <TextView
             android:id="@+id/question"

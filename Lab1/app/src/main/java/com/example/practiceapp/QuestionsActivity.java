@@ -98,13 +98,20 @@ public class QuestionsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        final Toolbar toolbar = findViewById(R.id.toolbarQuestions);
         setSupportActionBar(toolbar);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View view = toolbar.getChildAt(0);
+                startActivity(new Intent(QuestionsActivity.this, MainActivity.class));
+            }
+        });
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
         courseCode = intent.getIntExtra("quiz", -1);
-        Toast.makeText(getApplicationContext(), getJSONAnswers()[1][0], Toast.LENGTH_SHORT).show();
 
         // Load db and UI
         dbWrite = dbHelper.getWritableDatabase();
@@ -147,11 +154,8 @@ public class QuestionsActivity extends AppCompatActivity {
             RadioButton selectedRadioButton = (RadioButton)findViewById(selectedId);
 
             Log.d("onNextButtonClick: ", currentQuestion + "");
-            if (getJSONAnswers()[currentQuestion][0] == selectedRadioButton.getText().toString()) {
+            if (getJSONAnswers()[currentQuestion][0].equals(selectedRadioButton.getText().toString())) {
                 rightAnswers++;
-                Toast.makeText(getApplicationContext(), "Right answer!", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(getApplicationContext(), "Wrong answer!", Toast.LENGTH_SHORT).show();
             }
 
             if (currentQuestion < getJSONArray().length-1)

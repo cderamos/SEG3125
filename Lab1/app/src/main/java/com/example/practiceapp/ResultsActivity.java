@@ -44,21 +44,28 @@ public class ResultsActivity extends AppCompatActivity {
             resultText.setText("Good job! A full star");
         } if (score >=60 && score <65){
             rBar.setRating(1.5f);
-            resultText.setText("Better. Practice makes perfect");
+            resultText.setText("You know what they say, practice makes perfect");
         } if (score >=65 && score <70) {
             rBar.setRating((2));
+            resultText.setText("You know what they say, practice makes perfect");
         } if(score >=70 && score <75){
             rBar.setRating((2.5f));
+            resultText.setText("There's still room for improvement, but good job!");
         } if(score >=75 && score <80) {
             rBar.setRating((3));
+            resultText.setText("There's still room for improvement, but good job!");
         } if(score >=80 && score <85){
             rBar.setRating((3.5f));
+            resultText.setText("Good job!");
         } if(score >=85 && score <90) {
             rBar.setRating((4));
+            resultText.setText("Good job!");
         } if(score >=90 && score <95) {
             rBar.setRating((4.5f));
+            resultText.setText("Good job!");
         } if(score >=95 && score <100) {
             rBar.setRating((5));
+            resultText.setText("You did it! 5 stars!");
         }
 
         ((TextView) findViewById(R.id.date)).setText(new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()));

@@ -34,7 +34,6 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.settings_activity);
 
         db = dbHelper.getWritableDatabase();
-        setContentView(R.layout.settings_screen);
         final Toolbar toolbar = findViewById(R.id.toolbarSettings);
         setSupportActionBar(toolbar);
 

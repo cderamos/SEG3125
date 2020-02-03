@@ -14,13 +14,12 @@
         tools:layout_editor_absoluteY="-146dp">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarWelcome"
+            android:id="@+id/toolbarQuestions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
-            android:onClick="loadSettings"
-            android:navigationIcon="@drawable/house_navicon"
+            app:navigationIcon="@drawable/house_navicon"
             android:theme="?attr/actionBarTheme">
 
             <TextView
@@ -29,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
-                android:text="@string/home"
+                android:text="QUESTIONS"
                 android:textAlignment="center" />
         </androidx.appcompat.widget.Toolbar>
 
@@ -41,12 +40,12 @@
 
         <TextView
             android:id="@+id/question"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="25dp"
-            android:text="UwU"
+            android:text=""
             android:textAlignment="center"
             android:textSize="35sp" />
 
@@ -73,18 +72,21 @@
                     android:id="@+id/a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
                     android:text="A" />
 
                 <RadioButton
                     android:id="@+id/b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
                     android:text="B" />
 
                 <RadioButton
                     android:id="@+id/c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
                     android:text="C" />
 
                 <RadioButton

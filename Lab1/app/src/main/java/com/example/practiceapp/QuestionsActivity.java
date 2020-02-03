@@ -45,7 +45,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
     private int courseCode = 0;
     private int rightAnswers = 0;
-    private int numQuestions = 3;
+    private int numQuestions = 20;
     private int currentAnswer = 0;
     private int currentQuestion = -1;
     private float passingGrade;
@@ -65,11 +65,12 @@ public class QuestionsActivity extends AppCompatActivity {
         try{
             JSONObject object = new JSONObject(loadJSONFromAssets());
             JSONArray jArray = object.getJSONArray("choices");
+            int n = 0;
             for(int i = 0; i < jArray.length(); i++) {
                 for(int j = 0; j < 4; j++){
-                    JSONObject jsonQuestion = jArray.getJSONObject(j);
+                    JSONObject jsonQuestion = jArray.getJSONObject(n++);
                     String answer = jsonQuestion.getString("body");
-                    answersArray[i][j] = answer;
+                    answersArray[i][j] = answer; 
                 }
             }
         } catch (Exception e) {
@@ -127,8 +128,7 @@ public class QuestionsActivity extends AppCompatActivity {
         Log.d("onCreate: ", " "+json);
         parseJSON(json);
         //loadSettings()
-
-
+        numQuestions = getJSONArray().length;
     }
 
     public void onNextButtonClick(View view) {
@@ -147,7 +147,7 @@ public class QuestionsActivity extends AppCompatActivity {
             RadioButton selectedRadioButton = (RadioButton)findViewById(selectedId);
 
             Log.d("onNextButtonClick: ", currentQuestion + "");
-            if (answers[currentQuestion][0] == selectedRadioButton.getText().toString()) {
+            if (getJSONAnswers()[currentQuestion][0] == selectedRadioButton.getText().toString()) {
                 rightAnswers++;
                 Toast.makeText(getApplicationContext(), "Right answer!", Toast.LENGTH_SHORT).show();
             } else {

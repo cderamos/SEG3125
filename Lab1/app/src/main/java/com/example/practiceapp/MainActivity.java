@@ -7,11 +7,14 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
+    int minGrade = 50;
+    int numQuestions = 20;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,17 +22,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.welcome_screen);
         Toolbar toolbar = findViewById(R.id.toolbarWelcome);
         setSupportActionBar(toolbar);
+
+        Intent intent = getIntent();
+        minGrade = intent.getIntExtra("MinGrade", 50);
+        numQuestions = intent.getIntExtra("NumQuestions", 20);
+
+        Log.d("main: ", minGrade + "  " + numQuestions);
     }
 
     public void loadGeography(View v) {
         Intent intent = new Intent(this, QuestionsActivity.class);
         intent.putExtra("quiz", 0);
+        intent.putExtra("MinGrade", minGrade);
+        intent.putExtra("NumQuestions", numQuestions);
         startActivity(intent);
     }
 
     public void loadClassics(View v) {
         Intent intent = new Intent(this, QuestionsActivity.class);
         intent.putExtra("quiz", 1);
+        intent.putExtra("MinGrade", minGrade);
+        intent.putExtra("NumQuestions", numQuestions);
         startActivity(intent);
     }
 
@@ -61,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Intent intent = new Intent(this, SettingsActivity.class);
+            intent.putExtra("MinGrade", minGrade);
+            intent.putExtra("NumQuestions", numQuestions);
             startActivity(intent);
         }
 

@@ -60,10 +60,11 @@
 
             <Spinner
                 android:id="@+id/spinner"
-                android:layout_width="75dp"
+                android:layout_width="116dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:entries="@array/number_questions" />
+                android:entries="@array/num_questions"
+                android:spinnerMode="dialog" />
 
             <Button
                 android:id="@+id/apply"

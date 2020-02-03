@@ -42,20 +42,13 @@ import java.util.Locale;
 
 public class QuestionsActivity extends AppCompatActivity {
     private static final String[] COURSE = {"Geography", "Classics"};
-
     private int courseCode = 0;
     private int rightAnswers = 0;
     private int numQuestions = 20;
     private int currentAnswer = 0;
     private int currentQuestion = -1;
-    private float passingGrade;
-
-    JSONObject login = new JSONObject();
-
-
-    private String[][] answers = {{"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}};
+    private int minGrade = 50;
     private DbHelper dbHelper = new DbHelper(this);
-
     private SQLiteDatabase dbWrite;
     private SQLiteDatabase dbRead;
 
@@ -111,7 +104,9 @@ public class QuestionsActivity extends AppCompatActivity {
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
-        courseCode = intent.getIntExtra("quiz", -1);
+        courseCode = intent.getIntExtra("quiz", 0);
+        minGrade = intent.getIntExtra("MinGrade", 50);
+        numQuestions = intent.getIntExtra("NumQuestions", 20);
 
         // Load db and UI
         dbWrite = dbHelper.getWritableDatabase();
@@ -134,8 +129,6 @@ public class QuestionsActivity extends AppCompatActivity {
         String json = loadJSONFromAssets();
         Log.d("onCreate: ", " "+json);
         parseJSON(json);
-        //loadSettings()
-        numQuestions = getJSONArray().length;
     }
 
     public void onNextButtonClick(View view) {
@@ -158,7 +151,7 @@ public class QuestionsActivity extends AppCompatActivity {
                 rightAnswers++;
             }
 
-            if (currentQuestion < getJSONArray().length-1)
+            if (currentQuestion < numQuestions-1)
                 loadNextQuestion();
             else
                 quizComplete();
@@ -243,14 +236,6 @@ public class QuestionsActivity extends AppCompatActivity {
             return null;
         }
         return json;
-    }
-
-    private void loadSettings() {
-        Cursor c = dbRead.query("Settings", new String[]{"MinGrade", "NumQuestions"}, null, null, null, null, null);
-        passingGrade = c.getColumnIndex("MinGrade");
-        numQuestions = c.getColumnIndex("NumQuestions");
-
-        Log.d("Params", passingGrade +" " + numQuestions);
     }
 
     private void saveScore() {

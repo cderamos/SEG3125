@@ -11,12 +11,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.core.content.ContextCompat;
+
+import org.w3c.dom.Text;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -25,17 +29,17 @@ import java.util.Locale;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private DbHelper dbHelper = new DbHelper(this);
-    private SQLiteDatabase db;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
 
-        db = dbHelper.getWritableDatabase();
         final Toolbar toolbar = findViewById(R.id.toolbarSettings);
         setSupportActionBar(toolbar);
+
+        Intent intent = getIntent();
+        int minGrade = intent.getIntExtra("MinGrade", 50);
+        int numQuestions = intent.getIntExtra("NumQuestions", 20);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +48,10 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(new Intent(SettingsActivity.this, MainActivity.class));
             }
         });
+
+        //((TextView) findViewById(R.id.minGrade)).setText(minGrade);
+        Spinner sp = (Spinner)findViewById(R.id.spinner);
+        sp.setSelection(numQuestions-1);
     }
 
     public boolean onOptionsItemSelected (MenuItem item){
@@ -61,18 +69,23 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void apply(View v) {
-        float minGrade = 0;
+        int minGrade = 0;
         int numQuestions = 20;
         EditText minText = (EditText) findViewById(R.id.minGrade);
         try {
-            minGrade = Integer.parseInt(minText.getText().toString())/100;
+            minGrade = Integer.parseInt(minText.getText().toString());
+            numQuestions = Integer.parseInt(((Spinner)findViewById(R.id.spinner)).getSelectedItem().toString());
 
-            ContentValues values = new ContentValues();
-            values.put("MinGrade", minGrade);
-            values.put("NumQuestions", numQuestions);
+            if (minGrade < 0 || minGrade > 100) {
+                Toast.makeText(SettingsActivity.this, "Please enter a minimum grade between 0% and 100%", Toast.LENGTH_LONG).show();
+                return;
+            }
+            Log.d("apply: ", minGrade + "  " + numQuestions);
 
-            // Insert the new row, returning the primary key value of the new row
-            long newRowId = db.insert("Quizzes", null, values);
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("MinGrade", minGrade);
+            intent.putExtra("NumQuestions", numQuestions);
+            startActivity(intent);
         } catch (Exception e) {
             // Error here
         }

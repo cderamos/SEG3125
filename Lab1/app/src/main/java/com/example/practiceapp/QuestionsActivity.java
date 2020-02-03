@@ -226,9 +226,16 @@ public class QuestionsActivity extends AppCompatActivity {
 
     public String loadJSONFromAssets() {
         String json = null;
+        String fname = "";
+
+        if (courseCode == 0) {
+            fname = "Geography.json";
+        } else {
+            fname = "Classics.json";
+        }
 
         try {
-            InputStream is = QuestionsActivity.this.getAssets().open("Classics.json");
+            InputStream is = QuestionsActivity.this.getAssets().open(fname);
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);

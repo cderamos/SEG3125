@@ -27,7 +27,7 @@ public class ResultsActivity extends AppCompatActivity {
     private int numQuestions = 20;
     private int score = 0;
     private String title = null;
-    private ArrayList<Score> history;
+    private ArrayList<Score> history = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,8 @@ public class ResultsActivity extends AppCompatActivity {
         score = (int) intent.getIntExtra("score", 0);
         title =  intent.getStringExtra("title");
         Bundle args = (Bundle) intent.getBundleExtra("history");
-        history = (ArrayList<Score>) args.getSerializable("ARRAYLIST");
+        if (args != null)
+            history = (ArrayList<Score>) args.getSerializable("ARRAYLIST");
         history.add(new Score(score, title, new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date())));
 
         ((TextView) findViewById(R.id.score)).setText(score+"%");

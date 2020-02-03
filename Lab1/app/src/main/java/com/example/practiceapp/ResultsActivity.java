@@ -82,6 +82,14 @@ public class ResultsActivity extends AppCompatActivity {
             resultText.setText("You did it! 5 stars!");
         }
 
+        if (score > minGrade) {
+            ((TextView) findViewById(R.id.minGrade)).setText("Congradulations! You passed the minimum grade of " + minGrade + "%");
+        } else if (score == minGrade) {
+            ((TextView) findViewById(R.id.minGrade)).setText("You barely passed the minimum grade of " + minGrade + "%");
+        } else {
+            ((TextView) findViewById(R.id.minGrade)).setText("Sorry! You failed the exam. The minimum grade was " + minGrade + "%");
+        }
+
         ((TextView) findViewById(R.id.date)).setText(new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()));
     }
 

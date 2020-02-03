@@ -15,6 +15,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -48,13 +49,49 @@ public class QuestionsActivity extends AppCompatActivity {
     private int currentAnswer = 0;
     private int currentQuestion = -1;
     private float passingGrade;
-    private String[] questions = {"What?", "When?", "sjiqwji"};
+
+    JSONObject login = new JSONObject();
+
+
     private String[][] answers = {{"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}};
     private DbHelper dbHelper = new DbHelper(this);
 
     private SQLiteDatabase dbWrite;
     private SQLiteDatabase dbRead;
 
+
+    public String[][] getJSONAnswers(){
+        String[][] answersArray = new String[20][4];
+        try{
+            JSONObject object = new JSONObject(loadJSONFromAssets());
+            JSONArray jArray = object.getJSONArray("choices");
+            for(int i = 0; i < jArray.length(); i++) {
+                for(int j = 0; j < 4; j++){
+                    JSONObject jsonQuestion = jArray.getJSONObject(j);
+                    String answer = jsonQuestion.getString("body");
+                    answersArray[i][j] = answer;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return answersArray;
+    }
+    public String[] getJSONArray(){
+        String[] questionsArray= new String[20];
+        try{
+            JSONObject object = new JSONObject(loadJSONFromAssets());
+            JSONArray jArray = object.getJSONArray("questions");
+            for(int i = 0; i < jArray.length(); i++) {
+                JSONObject jsonQuestion = jArray.getJSONObject(i);
+                String question = jsonQuestion.getString("title");
+                questionsArray[i] = question;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return questionsArray;
+    }
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,21 +103,36 @@ public class QuestionsActivity extends AppCompatActivity {
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
         courseCode = intent.getIntExtra("quiz", -1);
+        Toast.makeText(getApplicationContext(), getJSONAnswers()[1][0], Toast.LENGTH_SHORT).show();
 
         // Load db and UI
         dbWrite = dbHelper.getWritableDatabase();
         dbRead = dbHelper.getReadableDatabase();
         loadNextQuestion();
 
+        String[] array= new String[5];
+        try{
+            JSONObject object = new JSONObject(loadJSONFromAssets());
+            JSONArray jArray = object.getJSONArray("questions");
+            for(int i = 0; i < jArray.length(); i++) {
+                JSONObject jsonQuestion = jArray.getJSONObject(i);
+                String question = jsonQuestion.getString("title");
+                array[i] = question;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         String json = loadJSONFromAssets();
         Log.d("onCreate: ", " "+json);
         parseJSON(json);
-        //loadSettings();
+        //loadSettings()
+
+
     }
 
     public void onNextButtonClick(View view) {
         // Get answer
-
 
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         if(radioGroup.getCheckedRadioButtonId()==-1)
@@ -102,11 +154,11 @@ public class QuestionsActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Wrong answer!", Toast.LENGTH_SHORT).show();
             }
 
-            if (currentQuestion < questions.length-1)
+            if (currentQuestion < getJSONArray().length-1)
                 loadNextQuestion();
             else
                 quizComplete();
-            updateProgressBar();
+                updateProgressBar();
         }
     }
 
@@ -123,24 +175,24 @@ public class QuestionsActivity extends AppCompatActivity {
 
         // Set text answers
         List<String> answerList = new ArrayList<>();
-        answerList.add(answers[currentQuestion][0]);
-        answerList.add(answers[currentQuestion][1]);
-        answerList.add(answers[currentQuestion][2]);
-        answerList.add(answers[currentQuestion][3]);
+        answerList.add(getJSONAnswers()[currentQuestion][0]);
+        answerList.add(getJSONAnswers()[currentQuestion][1]);
+        answerList.add(getJSONAnswers()[currentQuestion][2]);
+        answerList.add(getJSONAnswers()[currentQuestion][3]);
 
         // Shuffle!
         Collections.shuffle(answerList);
         Log.d("List", answerList.toString());
         currentAnswer = 0;
         for (String curVal : answerList){
-            if (curVal.contains(answers[currentQuestion][0])){
+            if (curVal.contains(getJSONAnswers()[currentQuestion][0])){
                 break;
             }
             currentAnswer++;
         }
 
         // Set UI
-        ((TextView) findViewById(R.id.question)).setText(questions[currentQuestion]);
+        ((TextView) findViewById(R.id.question)).setText(getJSONArray()[currentQuestion]);
         ((RadioButton) findViewById(R.id.a)).setText(answerList.get(0));
         ((RadioButton) findViewById(R.id.b)).setText(answerList.get(1));
         ((RadioButton) findViewById(R.id.c)).setText(answerList.get(2));
@@ -174,14 +226,9 @@ public class QuestionsActivity extends AppCompatActivity {
 
     public String loadJSONFromAssets() {
         String json = null;
-        String fn = null;
-        if (courseCode == 0)
-            fn = "Geography.json";
-        else
-            fn = "Classics.json";
 
         try {
-            InputStream is = QuestionsActivity.this.getAssets().open(fn);
+            InputStream is = QuestionsActivity.this.getAssets().open("Classics.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);

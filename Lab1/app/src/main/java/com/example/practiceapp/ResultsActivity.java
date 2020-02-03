@@ -9,8 +9,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,12 +27,40 @@ public class ResultsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
-
+        RatingBar rBar = (RatingBar) findViewById(R.id.ratingBar);
+        TextView resultText = (TextView) findViewById((R.id.testResultText));
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
         score = (int) intent.getIntExtra("score", 0);
         ((TextView) findViewById(R.id.score)).setText(score+"%");
-        ((RatingBar) findViewById(R.id.ratingBar)).setNumStars((int)(score/20));
+        if (score >=0 && score < 50){
+            rBar.setRating((0));
+            resultText.setText("Could be better. Need to study more!");
+        } if (score >=50 && score <55 ) {
+            rBar.setRating(0.5f);
+            resultText.setText("Here, half a star is better than nothing. Decent work.");
+        } if (score >=55 && score <60) {
+            rBar.setRating(1);
+            resultText.setText("Good job! A full star");
+        } if (score >=60 && score <65){
+            rBar.setRating(1.5f);
+            resultText.setText("Better. Practice makes perfect");
+        } if (score >=65 && score <70) {
+            rBar.setRating((2));
+        } if(score >=70 && score <75){
+            rBar.setRating((2.5f));
+        } if(score >=75 && score <80) {
+            rBar.setRating((3));
+        } if(score >=80 && score <85){
+            rBar.setRating((3.5f));
+        } if(score >=85 && score <90) {
+            rBar.setRating((4));
+        } if(score >=90 && score <95) {
+            rBar.setRating((4.5f));
+        } if(score >=95 && score <100) {
+            rBar.setRating((5));
+        }
+
         ((TextView) findViewById(R.id.date)).setText(new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()));
     }
 

@@ -18,7 +18,6 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.preference.PreferenceFragmentCompat;
-import androidx.core.content.ContextCompat;
 
 import org.w3c.dom.Text;
 
@@ -79,9 +78,11 @@ public class SettingsActivity extends AppCompatActivity {
             minGrade = Integer.parseInt(minText.getText().toString());
             numQuestions = Integer.parseInt(((Spinner)findViewById(R.id.spinner)).getSelectedItem().toString());
 
-            if (minGrade < 0 || minGrade > 100) {
+            if (minGrade < 0 || minGrade > 100 || minText.getText().toString().equals(null)) {
                 Toast.makeText(SettingsActivity.this, "Please enter a minimum grade between 0% and 100%", Toast.LENGTH_LONG).show();
                 return;
+            } else {
+                Toast.makeText(SettingsActivity.this, "Settings Applied", Toast.LENGTH_LONG).show();
             }
             Log.d("apply: ", minGrade + "  " + numQuestions);
 
@@ -93,7 +94,7 @@ public class SettingsActivity extends AppCompatActivity {
             intent.putExtra("NumQuestions", numQuestions);
             startActivity(intent);
         } catch (Exception e) {
-            // Error here
+            e.printStackTrace();
         }
     }
 }

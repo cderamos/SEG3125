@@ -28,6 +28,7 @@ public class ResultsActivity extends AppCompatActivity {
     private int score = 0;
     private String title = null;
     private ArrayList<Score> history = new ArrayList<>();
+    private String category = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +78,7 @@ public class ResultsActivity extends AppCompatActivity {
         } if(score >=90 && score <95) {
             rBar.setRating((4.5f));
             resultText.setText("Good job!");
-        } if(score >=95 && score <100) {
+        } if(score >=95 && score <=100) {
             rBar.setRating((5));
             resultText.setText("You did it! 5 stars!");
         }
@@ -96,8 +97,8 @@ public class ResultsActivity extends AppCompatActivity {
     public void home(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         Bundle args = new Bundle();
-        args.putSerializable("ARRAYLIST",(Serializable)history);
-        intent.putExtra("BUNDLE",args);
+        args.putSerializable("ARRAYLIST",history);
+        intent.putExtra("BUNDLE", args);
         intent.putExtra("MinGrade", minGrade);
         intent.putExtra("NumQuestions", numQuestions);
         startActivity(intent);

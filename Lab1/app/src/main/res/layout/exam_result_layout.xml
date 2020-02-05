@@ -17,18 +17,5 @@
             android:layout_marginBottom="15dp"
             android:text="Date: 2020-01-29" />
 
-        <TextView
-            android:id="@+id/textViewCat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:text="Category: CLASSICS" />
-
-        <TextView
-            android:id="@+id/textViewResult"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:text="Score: 20/20" />
     </LinearLayout>
 </LinearLayout>

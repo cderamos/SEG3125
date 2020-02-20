@@ -22,10 +22,9 @@ body {
   font-weight:lighter;
 }
 
-.column.search{
+.column.tools{
   width: 25%;
 }
-
 .column.apt{
   width: 75%;
 }
@@ -41,4 +40,20 @@ body {
   .column {
     width: 100%;
   }
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }

@@ -4,6 +4,10 @@
 body {
   margin: 0;
 }
+
+h4 {
+  font-weight: lighter;
+}
 .header{
   color:black;
   font-family: Tahoma;
@@ -23,10 +27,10 @@ body {
 }
 
 .column.tools{
-  width: 25%;
+  width: 12%;
 }
 .column.apt{
-  width: 75%;
+  width: 88%;
 }
 
 /* Clear floats after the columns */
@@ -52,6 +56,9 @@ td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+  font-weight: lighter;
+  font-size: 13px;
+  text-align: center;
 }
 
 tr:nth-child(even) {

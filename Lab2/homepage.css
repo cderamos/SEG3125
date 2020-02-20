@@ -1,7 +1,44 @@
-//CSS FILE FOR HOMEPAGE
-body{
-  background-color: red;
+* {
+  box-sizing: border-box;
 }
-#titlepage-name{
-  background-color: :red;
+body {
+  margin: 0;
+}
+.header{
+  color:black;
+  font-family: Tahoma;
+  opacity: 0.5;
+  font-weight:lighter;
+  letter-spacing: 2px;
+  margin-left:12px;
+  font-size:20px;
+}
+
+.column{
+  float: left;
+  padding: 15px;
+  font-family: Tahoma;
+  opacity: 0.5;
+  font-weight:lighter;
+}
+
+.column.search{
+  width: 25%;
+}
+
+.column.apt{
+  width: 75%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
 }

@@ -20,17 +20,22 @@ h4 {
 
 .column{
   float: left;
-  padding: 15px;
   font-family: Tahoma;
   opacity: 0.5;
+  display: inline-block;
   font-weight:lighter;
+  position:absolute;
 }
 
 .column.tools{
-  width: 12%;
+  width: 100px;
+  padding-left:20px;
+
 }
 .column.apt{
-  width: 88%;
+  width: 1350px;
+  padding-left:200px;
+
 }
 
 /* Clear floats after the columns */
@@ -43,6 +48,7 @@ h4 {
 @media screen and (max-width: 600px) {
   .column {
     width: 100%;
+    display: inline-block;
   }
 }
 

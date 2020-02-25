@@ -2,7 +2,13 @@
 <html>
 <head>
   <title>APT TRACKER</title>
-  <link rel="stylesheet" href="homepage.css">
+  <link rel="stylesheet" href="add.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="apt.js" type="text/javascript"></script>
 </head>
 <body>
   <div class="header">
@@ -12,26 +18,69 @@
   <div class="row">
     <div class="column tools">
       <h2>TOOLS</h2>
-      <h4> Search for APT</h4>
-      <h4> Add new APT</h4>
+      <a href="searchapt.html"><h4> Search for APT</h4></a>
+      <a href="addapt.html"><h4> Add new APT</h4></a>
       <h4> APT Relations</h4>
     </div>
-    <div class="column apt">
-      <form>
-        <label for="name">APT name:</label><br>
-        <input type="text" id="name" name="name"><br>
-        <label for="id">APT ID:</label><br>
-        <input type="text" id="id" name="id">
-        <label for="desc">APT DESCRIPTION:</label><br>
-        <input type="text" id="desc" name="desc"><br>
-        <label for="version">X-MITRE VERSION:</label><br>
-        <input type="text" id="version" name="version">
-        <label for="created">DATE CREATED:</label><br>
-        <input type="text" id="created" name="created"><br>
-        <label for="modified">LAST MODIFIED:</label><br>
-        <input type="text" id="modified" name="modified"><br>
-
-      </form>
+    <div class="column add">
+      <div class="form-group">
+       <label class="control-label col-sm-2" for="name">Common Name:</label>
+       <div class="col-sm-6">
+         <input type="email" class="form-control" id="email" placeholder="Enter APT Name" name="email">
+       </div>
+     </div>
+     <br>
+     <div class="form-group">
+       <label class="control-label col-sm-2" for="alternate">Alternate Name:</label>
+       <div class="col-sm-6">
+         <input type="alternate" class="form-control" id="alternate" placeholder="Enter APT ID" name="alternate">
+       </div>
+     </div>
+     <br>
+     <div class="form-group">
+       <label class="control-label col-sm-2" for="tsector">Target Sector:</label>
+       <div class="col-sm-6">
+         <input type="tsector" class="form-control" id="tsector" placeholder="Enter X-Mitre Version" name="tsector">
+       </div>
+     </div>
+     <div class="form-group">
+       <label class="control-label col-sm-2" for="type">Attack Vector:</label>
+       <div class="col-sm-6">
+         <input type="type" class="form-control" id="type" placeholder="Enter X-Mitre Version" name="type">
+       </div>
+     </div>
+     <div class="form-group">
+       <label class="control-label col-sm-2" for="type">Associated Malware:</label>
+       <div class="col-sm-6">
+         <input type="type" class="form-control" id="type" placeholder="Enter X-Mitre Version" name="type">
+       </div>
+     </div>
+     <div class="form-group">
+       <label class="control-label col-sm-2" for="type">TTPs:</label>
+       <div class="col-sm-6">
+         <input type="type" class="form-control" id="type" placeholder="Enter X-Mitre Version" name="type">
+       </div>
+     </div>
+     <div class="form-group">
+       <label class="control-label col-sm-2" for="type">Modus Operandi:</label>
+       <div class="col-sm-6">
+         <input type="type" class="form-control" id="type" placeholder="Enter X-Mitre Version" name="type">
+       </div>
+     </div>
+     <br>
+     <div class="form-group">
+       <label class="control-label col-sm-2" for="type">References:</label>
+       <div class="col-sm-6">
+         <input type="type" class="form-control" id="type" placeholder="Enter X-Mitre Version" name="type">
+       </div>
+     </div>
+       <div class="form-group">
+         <label class="control-label col-sm-2" for="type">Toolsets:</label>
+         <div class="col-sm-6">
+           <input type="type" class="form-control" id="type" placeholder="Enter X-Mitre Version" name="type">
+         </div>
+       </div>
+     </div>
     </div>
   </div>
 

@@ -32,11 +32,15 @@ h4 {
   padding-left:20px;
 
 }
-.column.apt{
+.column.add{
   z-index:-1;
   width: 1350px;
+  padding-top:25px;
   padding-left:200px;
+}
 
+.form-group {
+  padding-bottom:25px;
 }
 
 /* Clear floats after the columns */
@@ -53,21 +57,6 @@ h4 {
   }
 }
 
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-  font-weight: lighter;
-  font-size: 13px;
-  text-align: center;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
+label{
+  font-weight: 900;
 }

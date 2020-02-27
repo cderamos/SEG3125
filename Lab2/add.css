@@ -8,6 +8,9 @@ body {
 h4 {
   font-weight: lighter;
 }
+#homepage{
+  text-decoration: none;
+}
 
 .header{
   color:black;
@@ -30,17 +33,19 @@ h4 {
 .column.tools{
   width: 150px;
   padding-left:20px;
-
 }
 .column.add{
   z-index:-1;
   width: 1350px;
-  padding-top:25px;
   padding-left:200px;
 }
 
+.column.add h2{
+  padding-left:15px;
+}
+
 .form-group {
-  padding-bottom:25px;
+  padding-bottom:35px;
 }
 
 /* Clear floats after the columns */
@@ -59,4 +64,7 @@ h4 {
 
 label{
   font-weight: 900;
+}
+#submit{
+  margin-top:25px;
 }

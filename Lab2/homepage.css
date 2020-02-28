@@ -29,7 +29,7 @@ h4 {
 
 .column.tools{
   width: 150px;
-  padding-left:20px;
+  padding-left:12px;
 
 }
 .column.apt{
@@ -57,19 +57,20 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  table-layout: fixed ;
 }
 .head{
   text-align: center;
 }
 td, th {
-  border: 1px solid #dddddd;
+  border: 1px solid 	#000000;
   text-align: left;
   padding: 8px;
   font-weight: lighter;
   font-size: 13px;
   text-align:center;
-}
 
-tr:nth-child(even) {
+}
+tr:nth-child(2n) {
   background-color: #dddddd;
 }

@@ -27,15 +27,17 @@
       <p id="show">
         <table>
   <tr>
-    <th>APT NAME</th>
-    <th>APT ID</th>
-    <th>APT TYPE</th>
-    <th>DATE CREATED</th>
-    <th>X-MITRE VERSION</th>
-    <th>LAST MODIFIED</th>
+    <th style="text-align:center;">EDIT APT INFO</th>
+    <th style="text-align:center;">APT NAME</th>
+    <th style="text-align:center;">APT ID</th>
+    <th style="text-align:center;">APT TYPE</th>
+    <th style="text-align:center;">DATE CREATED</th>
+    <th style="text-align:center;">X-MITRE VERSION</th>
+    <th style="text-align:center;">LAST MODIFIED</th>
   </tr>
-  <tr data-toggle="collapse" data-target="#demo">
-    <td>Browser Extensions</td>
+  <tr>
+    <td data-toggle="collapse" data-target="#demo"><a href="#"><img src="https://image.flaticon.com/icons/png/512/60/60995.png" onclick="document.getElementById('myImage').src='pic_bulboff.gif'"/img></a></td>
+    <td><a href="#">Browser Extensions</a></td>
     <td>attack-pattern--389735f1-f21c-4208-b8f0-f8031e7169b8</td>
     <td>attack-pattern</td>
     <td>2018-01-16T16:13:52.465Z</td>
@@ -43,36 +45,38 @@
     <td>2018-01-16T16:13:52.465Z</td>
   </tr>
     <tr id="demo" class="collapse">
+      <td></td>
       <td>
          <label for="fname">EDIT APT NAME:</label>
-         <input type="text" id="fname" name="fname">
+         <input type="text" id="fname" name="fname"style="margin-bottom:5px;">
       </td>
       <td>
         <label for="fname">EDIT APT ID:</label>
-        <input type="text" id="fname" name="fname">
+        <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
      </td>
      <td>
        <label for="fname">EDIT APT TYPE:</label>
-       <input type="text" id="fname" name="fname">
+       <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
     </td>
     <td>
       <label for="fname">EDIT CREATION DATE:</label>
-      <input type="text" id="fname" name="fname">
+      <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
    </td>
    <td>
      <label for="fname">EDIT X-MITRE VERSION:</label>
-     <input type="text" id="fname" name="fname">
+     <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
   </td>
   <td>
       <button type="test">SUBMIT</button>
  </td>
     </tr>
-    <tr data-toggle="collapse" data-target="#demo2">
-      <td>Browser Extensions</td>
-      <td>attack-pattern--389735f1-f21c-4208-b8f0-f8031e7169b8</td>
+    <tr>
+      <td data-toggle="collapse" data-target="#demo2"><a href="#"><img src="https://image.flaticon.com/icons/png/512/60/60995.png" id="navArrow" onclick="document.getElementById('myImage').src='pic_bulboff.gif'"/img></a></td>
+      <td>Brute Force</td>
+      <td>attack-pattern--a93494bb-4b80-4ea1-8695-3236a49916fd</td>
       <td>attack-pattern</td>
-      <td>2018-01-16T16:13:52.465Z</td>
-      <td>1.0</td>
+      <td>2017-05-31T21:31:22.767Z</td>
+      <td>1.1</td>
       <td>2018-01-16T16:13:52.465Z</td>
     </tr>
     <tr id="demo2" class="collapse" >
@@ -97,9 +101,42 @@
      <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
   </td>
   <td>
-      <button type="test">SUBMIT</button>
+      <button type="test" onclick="updateAPTInfo()">SUBMIT</button>
  </td>
     </tr>
+    <tr>
+      <td data-toggle="collapse" data-target="#demo3"><a href="#"><img src="https://image.flaticon.com/icons/png/512/60/60995.png" onclick="document.getElementById('myImage').src='pic_bulboff.gif'"/img></a></td>
+      <td>Browser Extensions</td>
+      <td>attack-pattern--389735f1-f21c-4208-b8f0-f8031e7169b8</td>
+      <td>attack-pattern</td>
+      <td>2018-01-16T16:13:52.465Z</td>
+      <td>1.0</td>
+      <td>2018-01-16T16:13:52.465Z</td>
+    </tr>
+    <tr id="demo3" class="collapse" >
+      <td>
+         <label for="fname">EDIT APT NAME:</label>
+         <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
+      </td>
+      <td>
+        <label for="fname">EDIT APT ID:</label>
+        <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
+     </td>
+     <td>
+       <label for="fname">EDIT APT TYPE:</label>
+       <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
+    </td>
+    <td>
+      <label for="fname">EDIT CREATION DATE:</label>
+      <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
+   </td>
+   <td>
+     <label for="fname">EDIT X-MITRE VERSION:</label>
+     <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
+  </td>
+  <td>
+      <button type="test">SUBMIT</button>
+ </td>
 </table>
   </div>
   </body>

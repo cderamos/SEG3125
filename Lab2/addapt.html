@@ -14,7 +14,7 @@
   <div class="container-fluid">
   <div class="header">
     <a href="index.html" id="homepage"><h1>APT TRACKER</h1></a href>
-    <hr>
+    <hr style="height:1px;border:none;background-color:#333;width:100%;">
   </div>
     <div class="column tools">
       <h2>TOOLS</h2>
@@ -24,8 +24,9 @@
     </div>
     <div class="column add">
       <h2>ADD APT</h2>
+      <p id="mandatorymsg">Fields with a "*" are mandatory</p>
       <div class="form-group">
-       <label class="control-label col-sm-2" for="name">Common Name:</label>
+       <label class="control-label col-sm-2" for="name">*Common Name:</label>
        <div class="col-sm-6">
          <input type="email" class="form-control" id="name" placeholder="Enter APT Name" name="email">
        </div>
@@ -34,51 +35,51 @@
      <div class="form-group">
        <label class="control-label col-sm-2" for="alternate">Alternate Name:</label>
        <div class="col-sm-6">
-         <input type="alternate" class="form-control" id="alternate" placeholder="Enter APT ID" name="alternate">
+         <input type="alternate" class="form-control" id="alternate" placeholder="Enter Alternate Names" name="alternate">
        </div>
      </div>
      <br>
      <div class="form-group">
-       <label class="control-label col-sm-2" for="tsector">Target Sector:</label>
+       <label class="control-label col-sm-2" for="tsector">*Target Sector:</label>
        <div class="col-sm-6">
-         <input type="tsector" class="form-control" id="tsector" placeholder="Enter X-Mitre Version" name="tsector">
+         <input type="tsector" class="form-control" id="tsector" placeholder="Enter Target Sector" name="tsector">
        </div>
      </div>
      <div class="form-group">
-       <label class="control-label col-sm-2" for="type">Attack Vector:</label>
+       <label class="control-label col-sm-2" for="type">*Attack Vector:</label>
        <div class="col-sm-6">
-         <input type="type" class="form-control" id="attack" placeholder="Enter X-Mitre Version" name="type">
+         <input type="type" class="form-control" id="attack" placeholder="Enter Attack Vector" name="type">
        </div>
      </div>
      <div class="form-group">
-       <label class="control-label col-sm-2" for="type">Associated Malware:</label>
+       <label class="control-label col-sm-2" for="type">*Associated Malware:</label>
        <div class="col-sm-6">
-         <input type="type" class="form-control" id="malware" placeholder="Enter X-Mitre Version" name="type">
+         <input type="type" class="form-control" id="malware" placeholder="Enter Associated Malware" name="type">
        </div>
      </div>
      <div class="form-group">
-       <label class="control-label col-sm-2" for="type">TTPs:</label>
+       <label class="control-label col-sm-2" for="type">*TTPs:</label>
        <div class="col-sm-6">
-         <input type="type" class="form-control" id="ttp" placeholder="Enter X-Mitre Version" name="type">
+         <input type="type" class="form-control" id="ttp" placeholder="Enter TTPs" name="type">
        </div>
      </div>
      <div class="form-group">
-       <label class="control-label col-sm-2" for="type">Modus Operandi:</label>
+       <label class="control-label col-sm-2" for="type">*Modus Operandi:</label>
        <div class="col-sm-6">
-         <input type="type" class="form-control" id="modops" placeholder="Enter X-Mitre Version" name="type">
+         <input type="type" class="form-control" id="modops" placeholder="Enter Modus Operandi" name="type">
        </div>
      </div>
      <br>
      <div class="form-group">
-       <label class="control-label col-sm-2" for="type">References:</label>
+       <label class="control-label col-sm-2" for="type">*References:</label>
        <div class="col-sm-6">
-         <input type="type" class="form-control" id="refs" placeholder="Enter X-Mitre Version" name="type">
+         <input type="type" class="form-control" id="refs" placeholder="Enter References" name="type">
        </div>
      </div>
        <div class="form-group">
-         <label class="control-label col-sm-2" for="type">Toolsets:</label>
+         <label class="control-label col-sm-2" for="type">*Toolsets:</label>
          <div class="col-sm-6">
-           <input type="type" class="form-control" id="toolsets" placeholder="Enter X-Mitre Version" name="type">
+           <input type="type" class="form-control" id="toolsets" placeholder="Enter Toolsets" name="type">
          </div>
        </div>
        <div class="form-group">

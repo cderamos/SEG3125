@@ -39,6 +39,10 @@ h4 {
 
 }
 
+.column.apy a {
+  text-decoration: none;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
@@ -62,6 +66,7 @@ table {
 .head{
   text-align: center;
 }
+
 td, th {
   border: 1px solid 	#000000;
   text-align: left;
@@ -69,8 +74,10 @@ td, th {
   font-weight: lighter;
   font-size: 13px;
   text-align:center;
-
 }
 tr:nth-child(2n) {
   background-color: #dddddd;
+}
+img {
+  height:20px;
 }

@@ -32,7 +32,7 @@ h4 {
 
 .column.tools{
   width: 150px;
-  padding-left:20px;
+  padding-left:12px;
 }
 .column.add{
   z-index:-1;
@@ -67,4 +67,7 @@ label{
 }
 #submit{
   margin-top:25px;
+}
+#mandatorymsg{
+  margin-left:13px;
 }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>APT TRACKER</title>
+  <link rel="stylesheet" href="add.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="apt.js" type="text/javascript"></script>
+</head>
+<body>
+  <div class="container-fluid">
+  <div class="header">
+    <a href="index.html" id="homepage"><h1>APT TRACKER</h1></a href>
+    <hr style="height:1px;border:none;background-color:#333;width:100%;">
+  </div>
+    <div class="column tools">
+      <h2>TOOLS</h2>
+      <a href="searchapt.html"><h4> Search for APT</h4></a>
+      <a href="addapt.html"><h4> Add new APT</h4></a>
+      <h4> APT Relations</h4>
+    </div>
+    <div class="column add">
+      <h2>APT Info</h2>
+      <div class="form-group">
+       <label class="control-label col-sm-2" for="name">APT Name:</label>
+       <div class="col-sm-6">
+         <p> Browser Extensions </p>
+       </div>
+     </div>
+     <br>
+     <div class="form-group">
+       <label class="control-label col-sm-2" for="alternate">APT ID:</label>
+       <div class="col-sm-6">
+         <p>attack-pattern--389735f1-f21c-4208-b8f0-f8031e7169b8</p>
+       </div>
+     </div>
+     <br>
+     <div class="form-group">
+       <label class="control-label col-sm-2" for="tsector">APT Type:</label>
+       <div class="col-sm-6">
+         <p>attack-type</p>
+       </div>
+     </div>
+     <div class="form-group">
+       <label class="control-label col-sm-2" for="type">Created:</label>
+       <div class="col-sm-6">
+         <p>Fri, 17 Nov 2019 11:12:46 GMT</p>
+       </div>
+     </div>
+     <div class="form-group">
+       <label class="control-label col-sm-2" for="type">X-Mitre Version</label>
+       <div class="col-sm-6">
+         <p> 1.0 </p>
+       </div>
+     </div>
+
+       <div class="form-group">
+         <label class="control-label col-sm-2" for="type">Add a Comment:</label>
+         <div class="col-sm-6">
+            <textarea id="w3mission" rows="4" cols="75"></textarea>
+         </div>
+       </div>
+       <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" id="submit" onclick="checkEmptyFields()">Submit</button>
+      </div>
+    </div>
+     </div>
+</body>
+</html>

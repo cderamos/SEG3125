@@ -2,40 +2,174 @@
 <html>
 <head>
   <title>APT TRACKER</title>
-  <link rel="stylesheet" href="homepage.css">
+  <link rel="stylesheet" href="search.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="apt.js" type="text/javascript"></script>
 </head>
 <body>
+<div class="container-fluid">
   <div class="header">
-    <h1>APT TRACKER/SEARCH</h1>
-    <hr>
+    <a href="index.html" id="homepage"><h1>APT TRACKER</h1></a href>
+    <hr style="height:1px;border:none;background-color:#333;width:100%;">
+  </div>
+  <div class="column tools">
+      <h2>TOOLS</h2>
+      <a href="searchapt.html"><h4> Search APT </h4></a>
+      <a href="addapt.html"><h4> Add new APT</h4></a>
+      <h4> APT Relations </h4>
+  </div>
+  <div class="column filters">
+      <h2>FILTERS</h2>
+      <h4>Date Created</h4>
+	  <input type="date"><br>
+      <h4>Last Modified</h4>
+	  <input type="date">
+	  <h4>X-Mitre Version</h4>
+	  <input type="number" placeholder="1.1" step="0.01">
   </div>
   <div class="row">
-    <div class="column tools">
-      <h2>TOOLS</h2>
-      <h4> Search for APT</h4>
-      <h4> Add new APT</h4>
-      <h4> APT Relations</h4>
-    </div>
-    <div class="column apt">
+   
+    <div class="column search">
       <form>
-        <label for="name">APT name:</label><br>
-        <input type="text" id="name" name="name"><br>
-        <label for="id">APT ID:</label><br>
-        <input type="text" id="id" name="id">
-        <label for="desc">APT DESCRIPTION:</label><br>
-        <input type="text" id="desc" name="desc"><br>
-        <label for="version">X-MITRE VERSION:</label><br>
-        <input type="text" id="version" name="version">
-        <label for="created">DATE CREATED:</label><br>
-        <input type="text" id="created" name="created"><br>
-        <label for="modified">LAST MODIFIED:</label><br>
-        <input type="text" id="modified" name="modified"><br>
-
+        <h2>Search</h2>
+        <input type="text" id="search" name="search" placeholder="Name, ID, Description..." size=100>
+		<button type='button' onclick = "showResults()"><i class="fa fa-search" id="search-btn"></i></button>
       </form>
     </div>
   </div>
+  <div class="column results">
+      <h2>Results</h2>
+      <p id="show">
+        <table>
+		  <tr>
+			<th style="text-align:center;">EDIT APT INFO</th>
+			<th style="text-align:center;">APT NAME</th>
+			<th style="text-align:center;">APT ID</th>
+			<th style="text-align:center;">APT TYPE</th>
+			<th style="text-align:center;">DATE CREATED</th>
+			<th style="text-align:center;">X-MITRE VERSION</th>
+			<th style="text-align:center;">LAST MODIFIED</th>
+		  </tr>
+		  <tr class="hide" id="item1">
+			<td data-toggle="collapse" data-target="#demo"><a href="#"><img src="https://image.flaticon.com/icons/png/512/60/60995.png" onclick="document.getElementById('myImage').src='pic_bulboff.gif'"/img></a></td>
+			<td><a href="#"><p id="attack1">Browser Extensions</p></a></td>
+			<td id="id1">attack-pattern--389735f1-f21c-4208-b8f0-f8031e7169b8</td>
+			<td id="type1">attack-pattern</td>
+			<td id="create1">Tues, 26 Mar 2019 07:30:06 GMT</td>
+			<td id="version1">1.0</td>
+			<td id="moddate1"><p id="moddate">Mon, 02 Mar 2020 05:03:04 GMT</p></td>
+		  </tr>
+			<tr id="demo" class="collapse">
+			  <form id="form1">
+			  <td></td>
+			  <td>
+				 <label for="fname">EDIT APT NAME:</label>
+				 <input type="text" id="aname1" name="fname"style="margin-bottom:5px;">
+			  </td>
+			  <td>
+				<label for="fname">EDIT APT ID:</label>
+				<input type="text" id="aid1" name="fname" style="margin-bottom:5px;">
+			 </td>
+			 <td>
+			   <label for="fname">EDIT APT TYPE:</label>
+			   <input type="text" id="atype1" name="fname" style="margin-bottom:5px;">
+			</td>
+			<td>
+			  <label for="fname">CREATION DATE:</label>
+			  <input type="text" id="acreate1" name="fname" style="margin-bottom:5px;" placeholder="Tues, 26 Mar 2019 07:30:06 GMT" readonly>
+		   </td>
+		   <td>
+			 <label for="fname">EDIT X-MITRE VERSION:</label>
+			 <input type="text" id="aversion1" name="fname" style="margin-bottom:5px;">
+		  </td>
+		  <td>
+			  <button type="test" onclick="submitSuccess()">SUBMIT</button>
+		 </td>
+		</form>
+			</tr>
+			<tr  class="hide" id="item2">
+			  <td data-toggle="collapse" data-target="#demo2"><a href="#"><img src="https://image.flaticon.com/icons/png/512/60/60995.png" id="navArrow" onclick="document.getElementById('myImage').src='pic_bulboff.gif'"/img></a></td>
+			  <td><a href="#">Brute Force</a></td>
+			  <td>attack-pattern--a93494bb-4b80-4ea1-8695-3236a49916fd</td>
+			  <td>attack-pattern</td>
+			  <td>Wed, 27 Apr 2019 10:01:20 GMT</td>
+			  <td>1.1</td>
+			  <td>Mon, 02 Mar 2020 05:03:04 GMT</td>
+			</tr>
+			<tr id="demo2" class="collapse" >
+			  <td>
+				 <label for="fname">EDIT APT NAME:</label>
+				 <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
+			  </td>
+			  <td>
+				<label for="fname">EDIT APT ID:</label>
+				<input type="text" id="fname" name="fname" style="margin-bottom:5px;">
+			 </td>
+			 <td>
+			   <label for="fname">EDIT APT TYPE:</label>
+			   <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
+			</td>
+			<td>
+			  <label for="fname">EDIT CREATION DATE:</label>
+			  <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
+		   </td>
+		   <td>
+			 <label for="fname">EDIT X-MITRE VERSION:</label>
+			 <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
+		  </td>
+		  <td>
+			  <button type="test" onclick="updateAPTInfo()">SUBMIT</button>
+		 </td>
+			</tr>
+			<tr  class="hide" id="item3">
+			  <td data-toggle="collapse" data-target="#demo3"><a href="#"><img src="https://image.flaticon.com/icons/png/512/60/60995.png" onclick="document.getElementById('myImage').src='pic_bulboff.gif'"/img></a></td>
+			  <td><a href="#">Browser Extensions</a></td>
+			  <td>attack-pattern--389735f1-f21c-4208-b8f0-f8031e7169b8</td>
+			  <td>attack-pattern</td>
+			  <td>Fri, 17 Nov 2019 11:12:46 GMT</td>
+			  <td>1.0</td>
+			  <td>Mon, 02 Mar 2020 05:03:04 GMT</td>
+			</tr>
+			<tr id="demo3" class="collapse" >
+			  <td>
+				 <label for="fname">EDIT APT NAME:</label>
+				 <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
+			  </td>
+			  <td>
+				<label for="fname">EDIT APT ID:</label>
+				<input type="text" id="fname" name="fname" style="margin-bottom:5px;">
+			 </td>
+			 <td>
+			   <label for="fname">EDIT APT TYPE:</label>
+			   <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
+			</td>
+			<td>
+			  <label for="fname">EDIT CREATION DATE:</label>
+			  <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
+		   </td>
+		   <td>
+			 <label for="fname">EDIT X-MITRE VERSION:</label>
+			 <input type="text" id="fname" name="fname" style="margin-bottom:5px;">
+		  </td>
+		  <td>
+			  <button type="test">SUBMIT</button>
+		 </td>
+		</table>
+  </div>
+</div>
 
-  </body>
-  </html>
+	<script> 
+		function showResults() {
+			document.getElementById("item1").classList.remove("hide");
+			document.getElementById("item2").classList.remove("hide");
+			document.getElementById("item3").classList.remove("hide");
+		}
+		
+	</script>
 </body>
 </html>

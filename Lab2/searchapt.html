@@ -21,29 +21,27 @@
       <h2>TOOLS</h2>
       <a href="searchapt.html"><h4> Search APT </h4></a>
       <a href="addapt.html"><h4> Add new APT</h4></a>
-      <h4> APT Relations </h4>
-  </div>
-  <div class="column filters">
-      <h2>FILTERS</h2>
-      <h4>Date Created</h4>
-	  <input type="date"><br>
-      <h4>Last Modified</h4>
-	  <input type="date">
-	  <h4>X-Mitre Version</h4>
-	  <input type="number" placeholder="1.1" step="0.01">
   </div>
   <div class="row">
-   
     <div class="column search">
       <form>
-        <h2>Search</h2>
+        <h2>SEARCH</h2>
         <input type="text" id="search" name="search" placeholder="Name, ID, Description..." size=100>
 		<button type='button' onclick = "showResults()"><i class="fa fa-search" id="search-btn"></i></button>
       </form>
+      <div id="filters">
+      <h3>Filters</h3>
+      <label for="date">Date Created: </label>
+      <input id="date_Created" size="30" type="text" />
+      <label for="datemod">Last Modified: </label>
+      <input type="date"/>
+      <label for="xmiteversion">X-Mitre Version: </label>
+      <input type="number" placeholder="1.1" step="0.01">
+    </div>
     </div>
   </div>
   <div class="column results">
-      <h2>Results</h2>
+      <h3>Results</h3>
       <p id="show">
         <table>
 		  <tr>
@@ -163,13 +161,13 @@
   </div>
 </div>
 
-	<script> 
+	<script>
 		function showResults() {
 			document.getElementById("item1").classList.remove("hide");
 			document.getElementById("item2").classList.remove("hide");
 			document.getElementById("item3").classList.remove("hide");
 		}
-		
+
 	</script>
 </body>
 </html>

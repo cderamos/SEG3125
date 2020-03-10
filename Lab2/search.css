@@ -8,6 +8,9 @@ body {
 h4 {
   font-weight: lighter;
 }
+h3{
+  
+}
 
 .header{
   color:black;
@@ -48,6 +51,7 @@ h4 {
 	top: 250px;
 	left:240px;
 	right: 5%;
+  padding-top:20px;
 }
 
 .column.apy a {

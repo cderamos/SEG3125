@@ -8,8 +8,8 @@ function checkEmptyFields() {
     var modOps= document.getElementById("modops");
     var toolsets= document.getElementById("toolsets");
     var refs= document.getElementById("refs");
-    if(comName.value == "" && tSector.value == "" && aVector.value==""&& assocMalware.value=="" &&
-    ttp.value==""&& modOps.value==""&&toolsets.value==""&& refs.value==""){
+    if(comName.value == "" || tSector.value == "" || aVector.value=="" || assocMalware.value=="" ||
+    ttp.value=="" || modOps.value=="" || toolsets.value=="" || refs.value==""){
       alert("Please fill out all the mandatory fields.");
     } else {
       alert("Success. Apt TESTER has been added to the matrix.");
@@ -18,7 +18,6 @@ function checkEmptyFields() {
 }
 
 function submitSuccess(){
-
   if(document.getElementById("aname1").value == "" && document.getElementById('aid1').value == "" &&
      document.getElementById('atype1').value == "" && document.getElementById('aversion1').value == "") {
     alert("Nothing updated.");

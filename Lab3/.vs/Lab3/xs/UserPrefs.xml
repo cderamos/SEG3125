@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{D0BED4D0-5930-8FBE-A81A-8226F4259727}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ChangeScene_Home.cs">
+    <Files>
+      <File FileName="Assets/Scripts/ChangeScene.cs" Line="11" Column="6" />
+      <File FileName="Assets/Scripts/AddCollider.cs" Line="11" Column="6" />
+      <File FileName="Assets/Scripts/ChangeScene_Quiz.cs" Line="8" Column="4" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Lab3" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="ChangeScene_Home.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8d401a36-cc51-4338-99f1-172cf34d1c32" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

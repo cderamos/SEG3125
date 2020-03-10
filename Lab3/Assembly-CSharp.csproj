@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\AddCollider.cs" />
     <Compile Include="Assets\Scripts\ChangeScene_Home.cs" />
     <Compile Include="Assets\Scripts\ChangeScene_Quiz.cs" />
+    <Compile Include="Assets\Scripts\ChangeScene_Settings.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/charmderamos/Documents/2019_2020_Documents/Winter_Semester/SEG3125/SEG3125/Lab3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

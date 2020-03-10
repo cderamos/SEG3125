@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/QuizScene_Gryffindor.unity
     guid: f9e9ac3f4821a48b0a92ead594c3eae6
+  - enabled: 1
+    path: Assets/Scenes/SettingsScene.unity
+    guid: 3872fd2ec20254f5ab820ba7791cad0b
   m_configObjects: {}

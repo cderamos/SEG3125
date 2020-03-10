@@ -293,6 +293,8 @@ GameObject:
   m_Component:
   - component: {fileID: 811842844}
   - component: {fileID: 811842843}
+  - component: {fileID: 811842845}
+  - component: {fileID: 811842846}
   m_Layer: 0
   m_Name: Settings
   m_TagString: Untagged
@@ -363,6 +365,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &811842845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811842842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082b59fce0b8d48abba859a68481aa99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &811842846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811842842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1b2f0e74a3143edaeec9e887a83573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1585687251
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +399,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1585687253}
   - component: {fileID: 1585687252}
-  - component: {fileID: 1585687254}
   m_Layer: 0
   m_Name: HogwartsBackg
   m_TagString: Untagged
@@ -444,18 +469,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1585687254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585687251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf8bfef95394c4dc5bf7035d6eff3a52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1888625400
 GameObject:
   m_ObjectHideFlags: 0

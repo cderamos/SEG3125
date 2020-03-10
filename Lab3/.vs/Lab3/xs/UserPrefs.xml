@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{D0BED4D0-5930-8FBE-A81A-8226F4259727}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ChangeScene_Home.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ChangeScene_Settings.cs">
     <Files>
-      <File FileName="Assets/Scripts/ChangeScene.cs" Line="11" Column="6" />
+      <File FileName="Assets/Scripts/ChangeScene.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/AddCollider.cs" Line="11" Column="6" />
-      <File FileName="Assets/Scripts/ChangeScene_Quiz.cs" Line="8" Column="4" />
+      <File FileName="Assets/Scripts/ChangeScene_Quiz.cs" Line="10" Column="53" />
+      <File FileName="Assets/Scripts/ChangeScene_Settings.cs" Line="9" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,7 +12,7 @@
           <Node name="Lab3" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="ChangeScene_Home.cs" selected="True" />
+                <Node name="ChangeScene_Settings.cs" selected="True" />
               </Node>
             </Node>
           </Node>
